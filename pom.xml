@@ -15,14 +15,6 @@
 			<version>4.3.7.RELEASE</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web 
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>4.3.7.RELEASE</version>
-		</dependency>
--->
-
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -30,9 +22,5 @@
 			<version>2.8.7</version>
 		</dependency>
 
-		<!-- <dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-core</artifactId> 
-			<version>${fasterxml.jackson.version}</version> </dependency> <dependency> 
-			<groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-databind</artifactId> 
-			<version>${fasterxml.jackson.version}</version> </dependency> -->
 	</dependencies>
 </project>
