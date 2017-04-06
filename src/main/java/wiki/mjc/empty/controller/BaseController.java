@@ -34,7 +34,7 @@ public class BaseController {
 	public Map<String, Object> json(@RequestParam String value) {
 		Map<String, Object> ret = new HashMap<String, Object>();
 		ret.put("result", "hello world");
-		elasticSearchUtil.ttt(value);
+		elasticSearchUtil.index("test", "t1", value);
 		return ret;
 	}
 }

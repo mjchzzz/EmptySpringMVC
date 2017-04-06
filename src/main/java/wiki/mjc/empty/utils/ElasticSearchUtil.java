@@ -5,6 +5,7 @@ import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.elasticsearch.action.delete.DeleteResponse;
@@ -20,7 +21,7 @@ import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHits;
-import org.elasticsearch.xpack.client.PreBuiltXPackTransportClient;
+import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.springframework.stereotype.Service;
 
 @Service("elasticSearchUtil")
@@ -30,13 +31,15 @@ public class ElasticSearchUtil {
 	
 	private TransportClient client = null;
 	
+	private static final String host = "192.168.64.227";
+	
 	public ElasticSearchUtil() {
-		Settings settings = Settings.builder().put("cluster.name", "elasticsearch")
-	            .put("xpack.security.user", "elastic:changeme").build();
+		Settings settings = Settings.builder().put("cluster.name", "elasticsearch").build();
+	            //.put("xpack.security.user", "elastic:changeme").build();
 		try {
-			client = new PreBuiltXPackTransportClient(settings)
-			        .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300))
-			        .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
+			client = new PreBuiltTransportClient(settings)
+			        .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(host), 9300));
+			        //.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
 		} catch (UnknownHostException e) {
 			logger.error("init ElasticSearch client failed");
 		}

@@ -37,30 +37,13 @@
 		<dependency>
 			<groupId>org.elasticsearch</groupId>
 			<artifactId>elasticsearch</artifactId>
-			<version>5.0.0</version>
+			<version>5.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.elasticsearch.client</groupId>
 			<artifactId>transport</artifactId>
-			<version>5.0.0</version>
+			<version>5.3.0</version>
 		</dependency>
-		<dependency>
-            <groupId>org.elasticsearch.client</groupId>
-            <artifactId>x-pack-transport</artifactId>
-            <version>5.0.0</version>
-        </dependency>
 	</dependencies>
-	 <repositories>
-          <!-- add the elastic repo -->
-          <repository>
-              <id>elastic</id>
-              <url>https://artifacts.elastic.co/maven</url>
-              <releases>
-                  <enabled>true</enabled>
-              </releases>
-              <snapshots>
-                  <enabled>false</enabled>
-              </snapshots>
-          </repository>
-    </repositories>
+	
 </project>
